@@ -12,6 +12,7 @@ Uniapp的布局方式和鸿蒙原生语言ArkTs有所不同，但又颇为神似
 ArkTs中有Row()、Column()、Stack()、Flex()这几个基础的布局容器组件，更复杂一些的还有像List()、Grid()、Scroll()等等。
     
 而在Uniapp中，基础的布局方式我们通常直接使用view容器来实现。比如我想要实现一个横向的布局，使用view容器，在view的样式中设置布局方式为row：
+
 ` 
 <view style="display: flex;flex-direction: row;" >
   <view style="width: 100px;height: 100px;background-color: aqua;">组件1</view>
@@ -22,6 +23,7 @@ ArkTs中有Row()、Column()、Stack()、Flex()这几个基础的布局容器组�
 ![img2](https://dl-harmonyos.51cto.com/images/202505/c5a88a45276f022c72549053b4500b0dee2f99.png "img2")
     
 而到了纵向布局，只需要把布局方向设置column就行了：
+
 `
 <view style="display: flex;flex-direction: column;" >
   <view style="width: 100px;height: 100px;background-color: aqua;">组件1</view>
@@ -39,6 +41,7 @@ absolute是一种绝对定位方式，是脱离了文档流、相对于父元素
     
 更详细一点解释就是不管它有多少同级别的组件，都不影响它以父元素左上角为原点的定位，同样的它也不影响别人，相当于悬浮在上层，使用偏移量来控制位置。比如下面这段代码：
 
+
 ` 
 <view  style="display: flex;flex-direction: column;position: relative;" >
 <view style="width: 50px;height: 50px;background-color:bisque;">组件1</view>
@@ -50,7 +53,9 @@ absolute是一种绝对定位方式，是脱离了文档流、相对于父元素
 
 ![img2](https://dl-harmonyos.51cto.com/images/202505/c2f5285706407090169764b6684dbda3a7bc9a.png "img2")
 
+
 所以如果需要层叠布局的两个容器都使用absolute定位，并且使用top、left、bottom、right来设置对齐方式，就实现了鸿蒙中的Stack()一样的功能：
+
 
 `
 <view class="content" style="display: flex;flex-direction: column;position: relative;" >
