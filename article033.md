@@ -62,8 +62,7 @@ absolute是一种绝对定位方式，是脱离了文档流、相对于父元素
 <view style="width: 100px;height: 100px;background-color: aqua;position: absolute;top: 0;">组件1</view>
 <view style="width: 50px;height: 50px;background-color:bisque;position: absolute;z-index: 10;top: 0;">组件2</view>
 </view>    
-
-`   
+`
 
 ![img2](https://dl-harmonyos.51cto.com/images/202505/444a7d437a1c5c0db31874a19b99a0d104f557.png "img2")
 
