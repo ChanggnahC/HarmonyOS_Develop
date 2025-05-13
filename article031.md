@@ -1,37 +1,44 @@
-## uniapp跨平台开发HarmonyOS NEXT应用初体验
-之前写过使用uniapp开发鸿蒙应用的教程，简单介绍了如何配置开发环境和运行项目。那时候的HbuilderX还是4.22版本，小一年过去了HbuilderX的正式版本已经来到4.64，历经了多个版本的更新后，跨平台开发鸿蒙应用的体验大幅提升。今天再次跟大家分享一下使用uniapp开发鸿蒙的使用教程。
+## The first experience of developing HarmonyOS NEXT applications across platforms with uniapp
+I previously wrote a tutorial on developing HarmonyOS applications using uniapp, briefly introducing how to configure the development environment and run the project. Back then, HbuilderX was still version 4.22. A year has passed, and the official version of HbuilderX has reached 4.64. After going through multiple version updates, the experience of developing HarmonyOS applications across platforms has been greatly improved. Today, I'd like to share with you again the tutorial on developing HarmonyOS using uniapp.
 
-这次的开发体验最大的感觉是非常的方便快捷，你甚至不需要打开DevEco studio，直接使用Hbuilder就可以连接真机进行调试，还有自动的实时编译更新，非常友好。
 
-首先，你需要去AppGallery Connect创建一个新的应用，填写应用名称和包名之后创建应用，包名我们一会需要用到。贴一下AppGallery Connect地址：
+The biggest feeling of this development experience is that it is very convenient and fast. You don't even need to open DevEco studio. You can directly use Hbuilder to connect to the real machine for debugging. There is also automatic real-time compilation and update, which is very friendly.
+
+
+First of all, you need to go to AppGallery Connect to create a new application. After filling in the application name and package name, create the application. We will need the package name later. Post the address of AppGallery Connect:
 `
 https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/
 `
 
 ![img1](https://dl-harmonyos.51cto.com/images/202505/a474d9309bc464d324c510adb65f7ec3eb446e.png "img1")
 
-接下来下载安装最新版本的HbuilderX，目前是4.64版本，下载地址：
+Next, download and install the latest version of HbuilderX. Currently, it is version 4.64. Download link:
+
 `
 https://www.dcloud.io/hbuilderx.html
 `
-打开HbuilderX新建项目，Vue版本选择3.0
+Open HbuilderX to create a new project and select 3.0 for the Vue version
 
 ![img2](https://dl-harmonyos.51cto.com/images/202505/c55d87393082a8dd794458951bb376440a4222.png "img2")
 
-创建项目之后，电脑连接真机，或者打开DevEco studio的模拟器也可以。然后再HbuilderX的运行菜单下找到运行到鸿蒙，第一次可能会有下载真机插件的步骤，还有配置调试证书的弹窗，真机插件是自动下载的，配置证书需要填写第一步创建应用时的包名，然后我推荐大家使用自动
+After creating the project, it is also possible to connect the computer to the real machine or open the simulator of DevEco studio. Then, under the run menu of HbuilderX, find "Run to HarmonyOS". The first time, there may be a step to download the real device plugin and a pop-up window to configure and debug the certificate. The real device plugin is downloaded automatically. To configure the certificate, you need to fill in the package name used when creating the application in the first step. Then, I recommend that everyone use the automatic version
 
-申请调试证书，信息自动填写完成后点击保存。
 
-再次运行，会弹出检测到的设备列表：
+Apply for a debugging certificate. After the information is automatically filled in, click "Save".
+
+
+Run it again and a list of detected devices will pop up:
 
 ![img3](https://dl-harmonyos.51cto.com/images/202505/7334e3a90145a491fb8035559ad76d7da29e11.png "img3")
 
-选择设备就可以将应用运行到设备上：
+Select the device and the application can be run on the device:
 
 ![img4](https://dl-harmonyos.51cto.com/images/202505/754e3042678b2292a008893fcdefa8d82bf6ba.png "img4")
 
-这时候尝试修改一些内容，程序会自动编译更新，非常方便。
+At this point, if you try to modify some content, the program will automatically compile and update, which is very convenient.
 
-整个的开发过程甚至比原生开发更加友好，鸿蒙的跨平台开发体验又提升了一大步，相信以后会有越来越多的开发者加入跨平台开发的阵容。这也符合幽蓝君之前的预测，在三个移动操作系统面前，跨平台会开发是很多中小企业的第一选择，而unipp又是跨平台开发框架中的比较突出的佼佼者，开发体验卓越。
 
-以上就是最新的uniapp开发鸿蒙应用的使用体验，以后也会持续深入的跟大家分享使用uniapp跨平台开发鸿蒙应用的教程，也打算把跨平台开发这部分做成一个合集，方便大家持续学习，欢迎大家关注。
+The entire development process is even more user-friendly than native development. The cross-platform development experience of HarmonyOS has taken a big step forward. It is believed that more and more developers will join the cross-platform development team in the future. This is also in line with the previous prediction of Youlan Jun. In the face of the three mobile operating systems, cross-platform development is the first choice for many small and medium-sized enterprises, and unipp is a particularly outstanding cross-platform development framework, offering an excellent development experience.
+
+
+The above is the latest experience of developing HarmonyOS applications using uniapp. In the future, we will continue to share in-depth tutorials on cross-platform development of HarmonyOS applications using uniapp with you all. We also plan to compile this part into a collection to facilitate your continuous learning. Welcome to follow us.
