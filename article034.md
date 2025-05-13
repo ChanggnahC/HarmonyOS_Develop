@@ -1,13 +1,14 @@
-## Uniapp开发鸿蒙应用教程之自定义导航栏
+## Uniapp Development Tutorial for HarmonyOS Applications - Custom Navigation Bar
 ​
-连续分享了几天的Uniapp跨平台开发鸿蒙应用教程的文章，相信大家对跨平台开发已经有了初步的了解，今天分享一下跨平台开发中的自定义导航栏。
+I have been sharing articles on cross-platform development of HarmonyOS applications through Uniapp for several consecutive days. I believe everyone has gained a preliminary understanding of cross-platform development. Today, I would like to share the custom navigation bar in cross-platform development.
 
-在Hbuilder的初始化项目中是自带了导航栏的，这是一个全局的导航栏，它的样式设置和修改是在全局的配置文件pages.json中进行。
+
+In the initialization project of Hbuilder, a navigation bar is built-in. This is a global navigation bar, and its style Settings and modifications are carried out in the global configuration file pages.json.
 ​
 
 ![img2](https://dl-harmonyos.51cto.com/images/202505/84ac40230b1ec6a7a756373b226fa7df52955f.png "img2")
 
-现在打开pages.json文件，在globalStyle中有一些关于导航栏的属性，我们尝试修改一下：
+Now open the pages.json file. In globalStyle, there are some properties related to the navigation bar. Let's try to modify them:
 
 `
 {
@@ -30,14 +31,16 @@
 }
 `
 
-然后看到导航栏已经发生了改变：
+Then it was seen that the navigation bar had changed:
 
 ![img2](https://dl-harmonyos.51cto.com/images/202505/377f71724ece495e58c093880a2da59fb3e46d.png "img2")
 
 
-这样的修改很方便很便捷，但是好像只有颜色和文字这些基础的属性可以修改，很多时候我们需要在导航栏上添加一些组件，比如按钮或者搜索框。
+Such modifications are very convenient and easy, but it seems that only basic attributes like color and text can be modified. Many times, we need to add some components to the navigation bar, such as buttons or search boxes.
 
-对于这种情况，uniapp也提供了相应的设置方案，还是在pages.json文件中，当我们需要为某一个页面的导航栏添加组件，就在对应的path路径下设置style，style中有个titleNView属性就是为导航栏添加自定义组件，像这样：
+
+For this situation, uniapp also provides a corresponding setting solution. It is still in the pages.json file. When we need to add components to the navigation bar of a certain page, we set the style under the corresponding path. There is a titleNView property in the style, which is used to add custom components to the navigation bar, like this:
+
 
 `
 "path": "pages/index/index",
@@ -65,15 +68,15 @@
 }
 `
 
-但是幽蓝君亲测这种设置方式在浏览器运行时可以正常显示，在鸿蒙中是无效的：
+However, Youlan Jun has personally tested that this setting method can be displayed normally when the browser is running, but it is ineffective in HarmonyOS:
 
 ![img2](https://dl-harmonyos.51cto.com/images/202505/9759c186778204966b32594543a66f6733dbbe.png "img2")
 
 
+So in the development of HarmonyOS, we need to define the navigation bar ourselves.
 
-所以在鸿蒙开发中我们需要自己定义导航栏。
 
-再次回到pages.json文件，这次将navigationStyle设置成custom，作用是取消原生的导航栏：
+Return to the pages.json file again. This time, set the navigationStyle to custom. The function is to cancel the native navigation bar:
 
 `
 "path": "pages/index/index",
@@ -82,7 +85,7 @@
 }
 `
 
-然后打开需要自定义导航栏的页面，我这里就直接在首页index.vue中操作，实现逻辑比较简单，就是在页面顶部添加一个导航栏大小的组件，然后在其中添加搜索框，相关代码如下：
+Then open the page where you need to customize the navigation bar. Here, I directly operate in index.vue on the home page. The implementation logic is relatively simple. Just add a component of the size of the navigation bar at the top of the page, and then add a search box in it. The relevant code is as follows:
 
 `
 <view class="custom-nav-bar">
@@ -108,10 +111,11 @@ justify-content: center;
 }
 `
 
-看一下运行效果：
+Take a look at the running effect:
 
 ![img2](https://dl-harmonyos.51cto.com/images/202505/538855c2327fdb8ca0c792605ae034f0eba3b5.png "img2")
 
-今天就以添加一个搜索框为例，大家如果需要自定义其他的样式也是类似的实现方式。
+Today, let's take adding a search box as an example. If you need to customize other styles, the implementation method is similar.
 
-以上就是uniapp跨平台开发鸿蒙应用中的自定义导航栏，感谢大家的阅读。
+
+The above is the custom navigation bar in the cross-platform development of HarmonyOS applications through uniapp. Thank you all for reading.
