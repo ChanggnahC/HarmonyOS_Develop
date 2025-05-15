@@ -1,7 +1,7 @@
-## Uniapp开发鸿蒙购物项目教程之样式选择器
-大家好，今天依然为大家带来鸿蒙跨平台开发教程的分享，我们本系列的教程最终要做一个购物应用，通过这个项目为大家分享uniapp开发鸿蒙应用从配置开发环境到应用打包上架的完成过程。
+## Uniapp Development Tutorial for HarmonyOS Shopping Projects - Style Selector
+Hello everyone! Today, we still bring you the sharing of the HarmonyOS cross-platform development tutorial. The final goal of this series of tutorials is to create a shopping application. Through this project, we will share with you the completion process of developing a HarmonyOS application through uniapp, from configuring the development environment to packaging and listing the application.
 
-昨天的文章实现了应用首页的轮播图，其中涉及到为轮播图设置样式，放一小段代码带大家回顾一下：
+Yesterday's article implemented the carousel image on the application's home page, which involved setting the style for the carousel image. Here's a short piece of code to help you review it:
 ```
 .swiper-item{
   width: 100%;
@@ -10,14 +10,13 @@
   text-align: center;
 }
 ```
-对于有css基础的同学来说这段代码很简单，但是对于初学者同学来说可能会不是很明白，今天幽蓝君就为大家分享一下uniapp开发鸿蒙时的样式选择器。
+For students with a foundation in css, this code is quite simple. However, for beginners, it might not be very clear. Today, Youlan Jun will share with you the style selector when developing HarmonyOS with uniapp.
 
-所谓样式选择器，就是为组件设置样式，比如背景色、大小、间距等等，ArkTs中也有这些样式，甚至名字都差不多，只是在语法上差别较大，而且uniapp中的选择器种类甚多，下面为大家一一讲解。我们以设置文字的颜色为例：
+Style selectors are used to set styles for components, such as background color, size, spacing, etc. ArkTs also has these styles, and even their names are similar, but there are significant differences in syntax. Moreover, there are many types of selectors in uniapp. Let's explain them one by one below. Let's take setting the color of the text as an example:
 
-#### 类选择器
+#### Class selector
 
-这第一个选择器就是上面的代码中的样式，是由.+名字组成，它修改的是class为对应名字的组件，例如：
-
+This first selector is the style in the above code, composed of ".+ name ". It modifies the component whose class is the corresponding name, for example:
 ```
 <text class="text1">类选择器</text>
 
@@ -25,12 +24,10 @@
   color: red;
 }
 ```
-这样对应组件中的文字就会被设置为红色。
+In this way, the text in the corresponding component will be set to red.
+#### ID selector
 
-#### ID选择器
-
-和类选择器略有不同，ID选择器由#+名字组成，修改的是对应id的组件：
-
+Slightly different from class selectors, ID selectors are composed of #+ names and modify the components corresponding to the ids:
 ```
 <text id="text2">ID选择器</text>
 
@@ -38,9 +35,9 @@
   color: green;
 }
 ```
-#### 属性选择器
+#### Attribute selector
 
-属性选择器比较简单粗暴，如果你在定义样式时直接写组件名字，那么该组件的样式会全部被修改：
+Property selectors are rather straightforward. If you directly write the component name when defining the style, all the styles of that component will be modified:
 
 ```
 <text>属性选择器</text>
@@ -49,27 +46,31 @@ text{
  color: gray;
 }
 ```
-#### 内联选择器
+#### Inline selector
 
-不知大家有没有注意到，关于样式还有一种直接在组件中写style的方式，这种方式叫做内联选择器：
+I wonder if everyone has noticed that there is another way to write style directly in a component regarding styles. This way is called an inline selector:
 ```
 <text style="color: orange;">内联选择器</text>
 
 ```
 
-#### 后代选择器
+#### Descendant selector
 
-这种方式是在属性选择器的基础上，如果你在使用属性选择器时写了两个名字，比如 ：
+This approach is based on the attribute selector. If you write two names when using the attribute selector, for example:
 ```
 view text{
 }
 ```
 
-这样的样式将在view容器内的text组件中生效。
+Such a style will take effect in the text component within the view container.
 
-关于选择器的种类还有很多，这里就不再一一列举，常见的选择器基本就是上面这么多。
 
-下面说一说优先级的问题。大家可能经常见过内联选择器和其他选择器同时出现，比如：
+
+There are many more types of selectors, and we won't list them all here. The common selectors are basically the ones mentioned above.
+
+
+
+Now let's talk about the issue of priority. You may often have seen inline selectors appear simultaneously with other selectors, such as:
 
 ```
 <text class="text1" style="color: orange;">选择器优先级</text>
@@ -78,17 +79,14 @@ view text{
   color: red;
 }
 ```
-两个选择器都设置了文字的颜色，那么谁的优先级更高呢，答案是内联选择器优先级更高。不光是和类选择器相比，上面我们介绍的所有的选择器中都是内联选择器的优先级更高。
+Both selectors have set the color of the text. So which one has a higher priority? The answer is that the inline selector has a higher priority. Not only compared with class selectors, but among all the selectors we introduced above, inline selectors have a higher priority.
 
-但是它不是优先级最高的。如果我的类选择器、ID选择器中的样式不想被内联选择器覆盖呢？可以在样式后添加!important，像这样：
-
+But it is not the one with the highest priority. What if the styles in my class selector and ID selector do not want to be overridden by inline selectors? It can be added after the style! important, like this:
 ```
 text{
   color: gray !important;
 }
 ```
-在所有的选择器中，!important的优先级是最高的，也提醒大家一定要慎重使用它，它虽然好用但是缺点更多，能不用则不用。
+Among all the selectors,! The priority of "important" is the highest, which also reminds everyone to use it with caution. Although it is easy to use, it has more disadvantages. If possible, it should not be used.
 
-以上就是对选择器的一些介绍，感谢大家阅读。
-
-#鸿蒙三方框架##Uniapp##购物#
+The above is some introduction to the selector. Thank you all for reading.
